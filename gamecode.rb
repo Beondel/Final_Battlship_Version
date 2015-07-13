@@ -167,6 +167,16 @@ until  scout.status == false && destroyer.status == false && battleship.status =
   else
     board[convert(row, column)] = "x"
     puts board
+    if $field[row - 1][column - 1] == "2" 
+      scout.is_hit
+    elsif $field[row - 1][column - 1] == "3"
+      destroyer.is_hit
+    elsif $field[row - 1][column - 1] == "4"
+      battleship.is_hit
+    elsif $field[row - 1][column - 1] == "5"
+      carrier.is_hit
+    end
   end
 end
 
+puts "YOU WON!!!"
